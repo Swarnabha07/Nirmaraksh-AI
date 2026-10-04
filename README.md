@@ -1,11 +1,17 @@
 # ⚡ Nirmaraksh-AI
 
 <p align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:00C6FF,100:7F00FF&height=180&section=header&text=Nirmaraksh-AI&fontSize=52&fontColor=ffffff&animation=fadeIn&fontAlignY=35" width="100%"/>
+  <img
+    src="https://capsule-render.vercel.app/api?type=waving&color=0:00F5FF,45:0066FF,75:7B2CFF,100:FF00C8&height=190&section=header&text=Nirmaraksh-AI&fontSize=52&fontColor=ffffff&animation=twinkling&fontAlignY=35"
+    width="100%"
+  />
 </p>
 
 <p align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=22&duration=2800&pause=900&color=00C6FF&center=true&vCenter=true&width=700&lines=Think.+Understand.+Act.;Multi-Model+AI+Assistant;Groq+%7C+Gemini+%7C+Claude+%7C+OpenAI;Memory+%7C+Agents+%7C+Actions+%7C+UI" alt="Typing animation" />
+  <img
+    src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=22&duration=2200&pause=650&color=00F5FF&center=true&vCenter=true&width=760&height=55&repeat=true&lines=%E2%9A%A1+Think.+Understand.+Act.;%F0%9F%A7%A0+Multi-Model+AI+Assistant;%F0%9F%94%80+Groq+%7C+Gemini+%7C+Claude+%7C+OpenAI;%F0%9F%8C%90+Memory+%7C+Agents+%7C+Actions+%7C+UI;%F0%9F%9A%80+One+Engine.+Many+Models.+Infinite+Possibilities."
+    alt="Nirmaraksh AI animated typing"
+  />
 </p>
 
 <p align="center">
@@ -37,52 +43,21 @@
 
 The project is built to move beyond a basic chatbot:
 
-```text
-        ┌───────────────────────────┐
-        │           USER            │
-        │    Voice / Text / UI      │
-        └─────────────┬─────────────┘
-                      │
-                      ▼
-        ┌───────────────────────────┐
-        │      Nirmaraksh UI       │
-        │        PyQt6 App          │
-        └─────────────┬─────────────┘
-                      │
-                      ▼
-        ┌───────────────────────────┐
-        │    MAIN ORCHESTRATOR     │◄──── Memory
-        │ Voice session + routing  │      Facts / Sessions
-        └─────────────┬─────────────┘
-                      │
-                      ▼
-        ┌───────────────────────────┐
-        │      Gemini Live API      │
-        │ Realtime voice + tools    │
-        └─────────────┬─────────────┘
-                      │
-             ┌────────┴────────┐
-             ▼                 ▼
-      ┌──────────────┐  ┌──────────────┐
-      │  TOOL LAYER  │  │  SUB-AGENTS  │
-      │ 25+ actions  │  │ Research etc │
-      └──────────────┘  └──────────────┘
-```
+<div align="center">
+
+<img width="550" height="550" alt="nirmaraksh-engine-animated" src="https://github.com/user-attachments/assets/3aabb5b4-bb07-47ab-b553-7b43f7cd64a1" />
+
+</div>
 
 ---
 
 # ✨ Features
 
-| Capability | Description |
-|---|---|
-| 🎙️ **Realtime Voice** | Voice-first interaction through the Gemini Live API |
-| 🖥️ **PyQt6 UI** | Desktop interface for interacting with the assistant |
-| 🧠 **Memory** | Stores useful facts and session context |
-| 🧰 **Tool Layer** | 25+ action tools for real-world workflows |
-| 🤖 **Sub-agents** | Specialized agents for research, building, and multi-LLM workflows |
-| 🔀 **Orchestration** | Central routing between sessions, tools, memory, and agents |
-| 🔐 **Authentication** | Dedicated authentication and Supabase authentication modules |
-| 🌐 **Multi-Model** | Designed to work with Gemini, Groq, Claude, and OpenAI |
+<div align="center">
+
+<img width="1200" height="620" alt="nirmaraksh-features-animated" src="https://github.com/user-attachments/assets/bf1e5365-d9a4-48c2-9567-e2b3e4e06798" />
+
+</div>
 
 ---
 
@@ -90,52 +65,13 @@ The project is built to move beyond a basic chatbot:
 
 ## High-Level Flow
 
-```text
-                         ┌──────────────────────┐
-                         │        USER          │
-                         │ Voice / Text / UI    │
-                         └──────────┬───────────┘
-                                    │
-                                    ▼
-                         ┌──────────────────────┐
-                         │   Nirmaraksh UI      │
-                         │       PyQt6          │
-                         └──────────┬───────────┘
-                                    │
-                                    ▼
-              ┌────────────────────────────────────────┐
-              │          MAIN ORCHESTRATOR             │
-              │   Voice Session • Router • Context     │
-              └───────────┬───────────────────┬────────┘
-                          │                   │
-                          │                   └──────────────┐
-                          ▼                                  ▼
-                 ┌────────────────┐                  ┌──────────────┐
-                 │ Gemini Live API│                  │    Memory    │
-                 │ Voice + Tools  │                  │ Facts/Session│
-                 └───────┬────────┘                  └──────────────┘
-                         │
-                         ▼
-              ┌────────────────────────────┐
-              │       MODEL ROUTER         │
-              │   Task-specific routing    │
-              └───────┬────────┬───────────┘
-                      │        │
-          ┌───────────┘        │        └───────────────┐
-          ▼                    ▼                        ▼
- ┌─────────────────┐  ┌─────────────────┐    ┌─────────────────┐
- │    OpenAI       │  │     Claude      │    │      Groq       │
- │    Sub-agents   │  │  Pentest / Sec  │    │    Fallback     │
- │ Research/Build  │  │ Security Tasks  │    │ Fast Inference  │
- └────────┬────────┘  └────────┬────────┘    └────────┬────────┘
-          │                    │                      │
-          └────────────────────┼──────────────────────┘
-                               ▼
-                  ┌─────────────────────────┐
-                  │       TOOL LAYER        │
-                  │       25+ actions       │
-                  └─────────────────────────┘
-```
+<div align="center">
+
+<img width="550" height="550" alt="nirmaraksh-ai-engine-high-level" src="https://github.com/user-attachments/assets/cfa7a663-efe0-4f60-b6de-cd4c2ee3e71c" />
+
+
+</div>
+
 
 ### 🧩 Repository Structure
 
@@ -266,33 +202,11 @@ python ui
 
 ### ⚡ First-run flow
 
-```text
-╭──────────────────────────╮
-│  01  Install Python      │
-╰────────────┬─────────────╯
-             ↓
-╭──────────────────────────╮
-│  02  Clone repository    │
-╰────────────┬─────────────╯
-             ↓
-╭──────────────────────────╮
-│  03  Create .venv        │
-╰────────────┬─────────────╯
-             ↓
-╭──────────────────────────╮
-│  04  Install dependencies│
-╰────────────┬─────────────╯
-             ↓
-╭──────────────────────────╮
-│  05  Add API keys        │
-╰────────────┬─────────────╯
-             ↓
-╭──────────────────────────╮
-│  06  Launch Nirmaraksh   │
-╰────────────┬─────────────╯
-             ↓
-       ⚡ ONLINE
-```
+<div align="center">
+
+<img width="580" height="600" alt="nirmaraksh-first-run-flow" src="https://github.com/user-attachments/assets/fe1c55ab-3946-4c49-a48e-c0ff0a33852f" />
+
+</div>
 
 ---
 
