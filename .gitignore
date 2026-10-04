@@ -1,18 +1,42 @@
+# =========================================================
 # API keys / secrets
+# =========================================================
 config/api_keys.json
 api_keys.json
 config/users.json
 config/session.json
 memory/chat_history.json
+
 .env
 .env.*
+!.env.example
 
+# =========================================================
 # Python
+# =========================================================
 __pycache__/
 *.pyc
 .venv/
 venv/
 
+# =========================================================
+# Next.js / Node
+# =========================================================
+website/nirmaraksh-AI/node_modules/
+website/nirmaraksh-AI/.next/
+website/nirmaraksh-AI/out/
+website/nirmaraksh-AI/.vercel/
+website/nirmaraksh-AI/coverage/
+website/nirmaraksh-AI/*.tsbuildinfo
+
+# =========================================================
 # IDE
+# =========================================================
 .vscode/
 .idea/
+
+# =========================================================
+# OS
+# =========================================================
+.DS_Store
+Thumbs.db
