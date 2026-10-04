@@ -1,0 +1,14 @@
+{
+    "groq_api_key": "YOUR-API-KEY",
+    "gemini_api_key": "YOUR-API-KEY",
+    "openai_api_key": "YOUR-API-KEY",
+    "claude_api_key": "YOUR-API-KEY",
+  "supabase_url": "https://gkcrrzmxutnuzibryynl.supabase.co",
+  "supabase_anon_key": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImdrY3Jyem14dXRudXppYnJ5eW5sIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTA5NDYxMjYsImV4cCI6MjEwNjUyMjEyNn0.RSewQFlXbJbfCn0b9UyOK6Jl6VbEzk6Jy94LQDNvBV0",
+    "builder_provider": "openai",
+    "os_system": "windows",
+    "assistant_name": "NIRMARAKSH",
+    "user_name": "YOUR-NAME",
+    "ui_color": "#00cdff",
+    "morning_brief_enabled": true
+}
