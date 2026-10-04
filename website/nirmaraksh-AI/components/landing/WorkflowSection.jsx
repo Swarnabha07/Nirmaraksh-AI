@@ -8,7 +8,7 @@ export default function WorkflowSection() {
     <section className="content-section workflow-section" id="platform" aria-labelledby="workflow-title">
       <div className="page-container">
         <SectionIntro
-          eyebrow="02 / THE WORKFLOW"
+          eyebrow="04 / THE WORKFLOW"
           titleId="workflow-title"
           title={<>{`How ${site.name}`}<br /><GradientText>Works.</GradientText></>}
           description="From the first signal to the final finding, every phase moves together in a continuous, transparent workflow."

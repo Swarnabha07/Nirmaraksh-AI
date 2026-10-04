@@ -9,7 +9,7 @@ export default function ControlSection() {
     <section className="content-section control-section" id="control" aria-labelledby="control-title">
       <div className="page-container">
         <SectionIntro
-          eyebrow="04 / BUILT FOR TRUST"
+          eyebrow="06 / BUILT FOR TRUST"
           titleId="control-title"
           title={<>Human Controlled<br /><GradientText>Security.</GradientText></>}
           description="Autonomous doesn't mean unchecked. Your team sets the boundaries, approves the actions, and has the evidence to back every decision."

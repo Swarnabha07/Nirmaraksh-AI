@@ -8,7 +8,7 @@ export default function TrustSection() {
     <section className="content-section trust-section" id="trust" aria-labelledby="trust-title">
       <div className="page-container">
         <SectionIntro
-          eyebrow="08 / TRUST BY DESIGN"
+          eyebrow="05 / TRUST BY DESIGN"
           titleId="trust-title"
           title={<>Built for confidence.<br /><GradientText>Not blind trust.</GradientText></>}
           description={`Powerful automation belongs inside clear boundaries. These are the principles that shape every ${site.name} workflow.`}

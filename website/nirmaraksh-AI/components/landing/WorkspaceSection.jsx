@@ -7,7 +7,7 @@ export default function WorkspaceSection() {
     <section className="content-section workspace-section" id="workspace" aria-labelledby="workspace-title">
       <div className="page-container">
         <SectionIntro
-          eyebrow="06 / THE WORKSPACE"
+          eyebrow="02 / THE WORKSPACE"
           titleId="workspace-title"
           title={<>Everything in view.<br /><GradientText>Nothing in silos.</GradientText></>}
           description="Agents, findings, reports, and every decision live together in one focused command center. Explore the sample workspace below."
