@@ -25,10 +25,12 @@ This document describes the backend architecture of the application in two parts
 # Part 1: Overall Structure
 
 ## System Diagram
+<div align="center">
 
-<!-- PLACEHOLDER: Replace the path below with your Part 1 flowchart (overall architecture) -->
+<img width="550" height="550" alt="nirmaraksh-full-stack-architecture-animated" src="https://github.com/user-attachments/assets/018235d3-c14a-4674-b3ac-2d99ef8c068c" />
 
-![Overall Architecture Flowchart](./docs/images/architecture-overview.png)
+</div>
+
 
 *Figure 1: Overall backend architecture, from client to managed backend.*
 
@@ -110,9 +112,11 @@ The system is split into four layers. Each has a single, clear responsibility.
 
 ## Detailed Sub-system Diagram
 
-<!-- PLACEHOLDER: Replace the path below with your Part 2 flowchart (detailed sub-systems) -->
+<div align="center">
 
-![Detailed Sub-system Flowchart](./docs/images/architecture-subsystems.png)
+<img width="750" height="900" alt="nirmaraksh-subsystems-flow-animated" src="https://github.com/user-attachments/assets/9dd1af52-2638-4eef-927d-5ad68a74233d" />
+
+</div>
 
 *Figure 2: The four backend sub-systems, with the cascade-delete relationships highlighted.*
 
@@ -121,9 +125,6 @@ The backend is composed of four sub-systems. Node letters (A to U) match the lab
 ---
 
 ## Sub-system 1: Auth and Automatic Database Trigger
-
-<!-- PLACEHOLDER (optional): Add a zoomed-in crop of Sub-system 1 -->
-<!-- ![Sub-system 1](./docs/images/subsystem-1-auth.png) -->
 
 Handles sign-up and sign-in, and automatically provisions a profile row for every new user.
 
@@ -166,9 +167,6 @@ Client browser → Next.js SSR → auth.users (new row)
 
 ## Sub-system 2: Real-time Streaming AI Pipeline
 
-<!-- PLACEHOLDER (optional): Add a zoomed-in crop of Sub-system 2 -->
-<!-- ![Sub-system 2](./docs/images/subsystem-2-streaming.png) -->
-
 Delivers AI responses token by token to the UI over Server-Sent Events (SSE).
 
 | Node | Step | Details |
@@ -198,9 +196,6 @@ UI (async generator) ◄── SSE ReadableStream (25 ms chunks) ◄─┘
 
 ## Sub-system 3: Chat Persistence and Composite Indexing
 
-<!-- PLACEHOLDER (optional): Add a zoomed-in crop of Sub-system 3 -->
-<!-- ![Sub-system 3](./docs/images/subsystem-3-persistence.png) -->
-
 Stores conversation history with fast chronological retrieval and per-user isolation.
 
 | Node | Component | Details |
@@ -228,9 +223,6 @@ Stores conversation history with fast chronological retrieval and per-user isola
 ---
 
 ## Sub-system 4: Privacy-preserving Telemetry and Atomic RPC
-
-<!-- PLACEHOLDER (optional): Add a zoomed-in crop of Sub-system 4 -->
-<!-- ![Sub-system 4](./docs/images/subsystem-4-telemetry.png) -->
 
 Records download events without storing raw IP addresses, and keeps related writes atomic.
 
