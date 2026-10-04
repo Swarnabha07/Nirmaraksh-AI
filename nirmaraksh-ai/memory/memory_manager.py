@@ -148,7 +148,8 @@ def format_memory_for_prompt(memory: dict | None) -> str:
             val = entry.get("value") if isinstance(entry, dict) else entry
             if val:
                 lines.append(f"  - {key.replace('_', ' ').title()}: {val}")
-        goals = memory.get("goals", {})
+
+    goals = memory.get("goals", {})
     if goals:
         lines.append("")
         lines.append("Goals:")
