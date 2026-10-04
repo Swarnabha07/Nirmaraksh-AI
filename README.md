@@ -106,7 +106,7 @@ Nirmaraksh-AI/
 
 ```bash
 git clone https://github.com/Swarnabha07/Nirmaraksh-AI.git
-cd Nirmaraksh-AI
+cd nirmaraksh-AI
 ```
 
 ## 2. Create a virtual environment
@@ -311,8 +311,8 @@ Before opening a pull request:
 | Contributor | GitHub | Contribution |
 |---|---|---|
 | 👨‍💻 **Swarnabha Banerjee** | [@Swarnabha07](https://github.com/Swarnabha07) | Web Developer |
-| 🧑‍💻 **Abhirup Sarkar** | [@abhi04anon](https://github.com/abhi04anon) | AI / ML / Agents |
-| 🤖 **Rana Pratap Roy** | [@RP-Roy](https://github.com/RP-Roy) | Backend Developer |
+| 🤖 **Abhirup Sarkar** | [@abhi04anon](https://github.com/abhi04anon) | AI / ML / Agents |
+| 🧑‍💻 **Rana Pratap Roy** | [@RP-Roy](https://github.com/RP-Roy) | Backend Developer |
 | 🎨 **Snehasish Saha** | [@snehasishlabs](https://github.com/snehasishlabs) | UI / Design |
 
 ---
