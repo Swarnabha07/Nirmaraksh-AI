@@ -28,6 +28,7 @@ website/nirmaraksh-AI/out/
 website/nirmaraksh-AI/.vercel/
 website/nirmaraksh-AI/coverage/
 website/nirmaraksh-AI/*.tsbuildinfo
+*.log
 
 # =========================================================
 # IDE
