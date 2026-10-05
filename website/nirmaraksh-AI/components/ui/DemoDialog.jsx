@@ -2,22 +2,26 @@
 
 import { useEffect, useRef, useState } from "react";
 import Eyebrow from "@/components/ui/Eyebrow";
-import { AgentIcon, ArrowIcon } from "@/components/ui/Icons";
-import { agents, demoSteps } from "@/data/agents";
+import { ArrowIcon } from "@/components/ui/Icons";
 
-const STEP_INTERVAL_MS = 3200;
 const FOCUSABLE = "button, [href], [tabindex]:not([tabindex='-1'])";
 
 export default function DemoDialog({ onClose }) {
-  const [step, setStep] = useState(0);
   const [playing, setPlaying] = useState(true);
   const dialogRef = useRef(null);
+  const videoRef = useRef(null);
 
+  // Autoplay can be refused by the browser; keep the Play/Pause label truthful if so.
   useEffect(() => {
-    if (!playing) return;
-    const interval = window.setInterval(() => setStep((current) => (current + 1) % demoSteps.length), STEP_INTERVAL_MS);
-    return () => window.clearInterval(interval);
-  }, [playing]);
+    videoRef.current?.play().catch(() => setPlaying(false));
+  }, []);
+
+  const togglePlayback = () => {
+    const video = videoRef.current;
+    if (!video) return;
+    if (video.paused) video.play().catch(() => {});
+    else video.pause();
+  };
 
   useEffect(() => {
     const dialog = dialogRef.current;
@@ -47,38 +51,50 @@ export default function DemoDialog({ onClose }) {
   }, [onClose]);
 
   return (
-    <div className="dialog-backdrop" onMouseDown={(event) => { if (event.target === event.currentTarget) onClose(); }}>
-      <section ref={dialogRef} className="demo-dialog" role="dialog" aria-modal="true" aria-labelledby="demo-title">
+    <div
+      className="dialog-backdrop"
+      onMouseDown={(event) => {
+        if (event.target === event.currentTarget) onClose();
+      }}
+    >
+      <section
+        ref={dialogRef}
+        className="demo-dialog"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="demo-title"
+      >
         <div className="dialog-top">
           <Eyebrow as="span">PRODUCT WALKTHROUGH</Eyebrow>
-          <button type="button" className="close-button" onClick={onClose} aria-label="Close demo">×</button>
+          <button
+            type="button"
+            className="close-button"
+            onClick={onClose}
+            aria-label="Close demo"
+          >
+            ×
+          </button>
         </div>
         <h2 id="demo-title">See the agents in action.</h2>
-        <p>One coordinated workflow. Every step visible, verifiable, and under your control.</p>
-        <div className="demo-screen">
-          <div className="demo-screen-top">
-            <span><span className="live-dot" /> LIVE WORKFLOW</span>
-            <span>STEP 0{step + 1} / 04</span>
-          </div>
-          <div className="demo-center-icon"><AgentIcon kind={agents[step].kind} /></div>
-          <span className="demo-agent-name">{demoSteps[step].agent}</span>
-          <h3>{demoSteps[step].title}</h3>
-          <p>{demoSteps[step].description}</p>
-          <div className="demo-step-track">
-            {demoSteps.map((item, index) => (
-              <button
-                key={item.agent}
-                type="button"
-                className={index === step ? "active" : ""}
-                onClick={() => { setStep(index); setPlaying(false); }}
-                aria-label={`Show ${item.agent} step`}
-              />
-            ))}
-          </div>
+        <p>
+          One coordinated workflow. Every step visible, verifiable, and under
+          your control.
+        </p>
+        <div className="demo-screen demo-screen-video">
+          <video
+            ref={videoRef}
+            src="/videos/nirmaraksh-ai-demo.mp4"
+            controls
+            autoPlay
+            playsInline
+            preload="auto"
+            onPlay={() => setPlaying(true)}
+            onPause={() => setPlaying(false)}
+          />
         </div>
         <div className="dialog-bottom">
           <span>Guided product preview</span>
-          <button type="button" onClick={() => setPlaying(!playing)}>
+          <button type="button" onClick={togglePlayback}>
             {playing ? "Pause preview" : "Play preview"} <ArrowIcon />
           </button>
         </div>
