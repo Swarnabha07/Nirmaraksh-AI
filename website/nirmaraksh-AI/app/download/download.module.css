@@ -820,7 +820,7 @@
 /* ---------- Responsive ---------- */
 @media (max-width: 1100px) {
   .hero {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     gap: 0;
     min-height: 0;
     padding-block: 50px 30px;
@@ -828,6 +828,7 @@
   }
 
   .heroCopy {
+    min-width: 0;
     margin-inline: auto;
   }
 
@@ -879,10 +880,7 @@
   }
 
   .coreWrap {
-    width: 600px;
-    max-width: none;
-    margin: -100px 0 -150px 50%;
-    transform: translateX(-50%) scale(0.6);
+    display: none;
   }
 
   .downloads {
@@ -899,6 +897,21 @@
 
   .cta {
     padding: 80px 24px;
+  }
+}
+
+@media (max-width: 400px) {
+  .heroCopy h1 {
+    font-size: 40px;
+  }
+
+  .card {
+    padding: 22px;
+  }
+
+  .cardTop {
+    flex-wrap: wrap;
+    row-gap: 10px;
   }
 }
 
