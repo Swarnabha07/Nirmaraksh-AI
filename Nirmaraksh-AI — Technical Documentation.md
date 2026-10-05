@@ -184,8 +184,3 @@ Key deps: `PyQt6`, `google-genai`, `sounddevice`, `opencv-python`, `mss`, `psuti
 6. **Sub-agents are additive by design** — one line per new agent in the `AGENTS` registry; both run a provider-agnostic ReAct loop independent of the main voice session.
 
 ---
-
-## 12. Known Issues
-
-- `memory_manager.py`, `format_memory_for_prompt()` — a `goals` variable was conditionally assigned only inside the `if prefs:` block while being read unconditionally afterward, causing an `UnboundLocalError` and a connect/disconnect loop whenever preferences were empty. Fixed by unconditionally assigning `goals = memory.get("goals", {})` before the check, matching the pattern used for `routines`, `projects`, and other memory categories in the same function.
-- `config/api_keys.json` is tracked in the repository with placeholder LLM keys but a live Supabase URL and anon key committed — rotate or restrict via RLS before any public demo.
